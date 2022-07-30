@@ -1,19 +1,32 @@
+using AspNetCoreWithReact.Application.Activities;
 using AspNetCoreWithReact.Persistence;
 using AspNetCoreWithReact.Persistence.Context;
 using AspNetCoreWithReact.Persistence.SeedData;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add services to the container.
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddMediatR(typeof(List.Hanlder).Assembly);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Add cors
+const string myAllowSpecificOrigins = "CorsPolicy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(myAllowSpecificOrigins, policy =>
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
+    });
+});
+
+//Builder
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -40,6 +53,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(myAllowSpecificOrigins);
 
 app.UseAuthorization();
 

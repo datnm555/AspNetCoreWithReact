@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWithReact.Domain"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWithReact.Persistence", "AspNetCoreWithReact.Persistence\AspNetCoreWithReact.Persistence.csproj", "{26A97924-2F4C-47C5-9C1A-D73667329376}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F9869472-B88F-4B14-AC85-3C2E923F55C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{26A97924-2F4C-47C5-9C1A-D73667329376}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A97924-2F4C-47C5-9C1A-D73667329376}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A97924-2F4C-47C5-9C1A-D73667329376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9869472-B88F-4B14-AC85-3C2E923F55C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9869472-B88F-4B14-AC85-3C2E923F55C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9869472-B88F-4B14-AC85-3C2E923F55C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9869472-B88F-4B14-AC85-3C2E923F55C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
